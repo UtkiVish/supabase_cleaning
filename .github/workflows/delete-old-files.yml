@@ -1,0 +1,23 @@
+name: Delete Old Supabase Files
+
+on:
+  schedule:
+    - cron: '* * * * *' # Every minute
+  workflow_dispatch:
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm install --prefix supa_cleanup
+      - name: Run cleanup script
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: npm run cleanup --prefix supa_cleanup 

@@ -1,0 +1,12 @@
+{
+  "name": "supa-cleanup",
+  "version": "1.0.0",
+  "description": "Supabase Storage cleanup utility for deleting old user-txt-uploads files.",
+  "main": "delete-old-files.js",
+  "scripts": {
+    "cleanup": "node delete-old-files.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.7"
+  }
+} 
