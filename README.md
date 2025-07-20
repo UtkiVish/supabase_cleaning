@@ -1,6 +1,6 @@
 # 🧹 Supabase Storage Auto-Cleanup
 
-The main SATI ChatBot project is managed by team **Fluaonauts**.
+The main SATI ChatBot project is managed by our team **Fluaonauts**.
 
 - **Main Project Repository:** [https://github.com/SAFAL-TIWARI/SATI-ChatBot](https://github.com/SAFAL-TIWARI/SATI-ChatBot)
 - **Website:** [https://sati-chatbot.vercel.app/index.html](https://sati-chatbot.vercel.app/index.html)
@@ -22,7 +22,7 @@ The main SATI ChatBot project is managed by team **Fluaonauts**.
 ## 🌟 About This Project
 
 - **Team:**
-  - This project is maintained and managed by **team Fluxonauts**.
+  - This project is maintained and managed by our team **Fluxonauts**.
   - It is designed to be simple, secure, and easy to maintain.
 
 - **Tech Stack:**
