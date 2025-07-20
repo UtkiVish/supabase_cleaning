@@ -15,9 +15,9 @@ jobs:
         with:
           node-version: '18'
       - name: Install dependencies
-        run: npm install --prefix supa_cleanup
+        run: npm install
       - name: Run cleanup script
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-        run: npm run cleanup --prefix supa_cleanup 
+        run: npm run cleanup 
