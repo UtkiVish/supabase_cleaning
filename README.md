@@ -1,6 +1,6 @@
 # 🧹 Supabase Storage Auto-Cleanup
 
-This project automatically deletes files uploaded by users to Supabase Storage for the website: [https://www.original-website-link.com](https://www.original-website-link.com)
+This project automatically deletes files uploaded by users to Supabase Storage for the website: [https://sati-chatbot.vercel.app/index.html](https://sati-chatbot.vercel.app/index.html)
 
 ---
 
@@ -29,13 +29,6 @@ This project automatically deletes files uploaded by users to Supabase Storage f
 
 ---
 
-## 🛡️ Security
-
-- All sensitive credentials (Supabase URL and Service Role Key) are securely managed using GitHub Actions secrets.
-- **No secrets are ever exposed in the code or logs.**
-
----
-
 ## 📂 Project Structure
 
 - `delete-old-files.js` — The cleanup script
@@ -45,16 +38,8 @@ This project automatically deletes files uploaded by users to Supabase Storage f
 
 ---
 
-## 🤝 Contributing
-
-If you want to help improve or maintain this project, please reach out to the repo owner or open a pull request!
-
----
-
 ## 🔗 Website
 
-[https://www.original-website-link.com](https://www.original-website-link.com)
+[https://sati-chatbot.vercel.app/index.html](https://sati-chatbot.vercel.app/index.html)
 
----
-
-*Keeping your Supabase storage tidy, automatically!* 
+--- 
