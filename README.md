@@ -1,60 +1,60 @@
-# Supabase Storage Cleanup Utility
+# 🧹 Supabase Storage Auto-Cleanup
 
-This folder contains a Node.js script and setup for automatically deleting files older than 5 minutes from the `user-txt-uploads` bucket in Supabase Storage.
+This project automatically deletes files uploaded by users to Supabase Storage for the website: [https://www.original-website-link.com](https://www.original-website-link.com)
 
-## How It Works
-- The script (`delete-old-files.js`) lists all files in the bucket and deletes any file whose name contains a timestamp older than 5 minutes.
-- Intended to be run on a schedule (e.g., via GitHub Actions, cron, or manually).
+---
 
-## Setup
-1. **Install dependencies:**
-   ```bash
-   cd supa_cleanup
-   npm install
-   ```
-2. **Set environment variables:**
-   - `SUPABASE_URL` — your Supabase project URL
-   - `SUPABASE_SERVICE_ROLE_KEY` — your Supabase service role key (keep this secret!)
+## 🚀 What Does This Repo Do?
 
-3. **Run the script:**
-   ```bash
-   npm run cleanup
-   ```
+- **Purpose:**
+  - This repository contains a Node.js script and GitHub Actions workflow that regularly cleans up (deletes) files stored in the Supabase Storage bucket by any user on the website above.
+  - It ensures that user-uploaded files are only kept for a short, defined period, helping manage storage costs and privacy.
 
-## GitHub Actions Integration
-- Add the following secrets to your GitHub repository:
-  - `SUPABASE_URL`
-  - `SUPABASE_SERVICE_ROLE_KEY`
-- Example workflow (`.github/workflows/delete-old-files.yml`):
-  ```yaml
-  name: Delete Old Supabase Files
+- **How it works:**
+  - Files uploaded by users are named with a timestamp.
+  - The cleanup script runs every minute (via GitHub Actions) and deletes files that have reached their scheduled deletion time (the next 5-minute mark after upload).
 
-  on:
-    schedule:
-      - cron: '*/5 * * * *' # Every 5 minutes
-    workflow_dispatch:
+---
 
-  jobs:
-    cleanup:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v3
-        - name: Set up Node.js
-          uses: actions/setup-node@v3
-          with:
-            node-version: '18'
-        - name: Install dependencies
-          run: npm install --prefix supa_cleanup
-        - name: Run cleanup script
-          env:
-            SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-            SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-          run: npm run cleanup --prefix supa_cleanup
-  ```
+## 🌟 About This Project
 
-## Security
-- **Never expose your Service Role Key in public repos or client-side code.**
-- Keep this folder/repo private if possible.
+- **Collaboration:**
+  - This project is maintained in collaboration with the website owner and contributors.
+  - It is designed to be simple, secure, and easy to maintain.
 
-## Customization
-- Adjust the `TIMEOUT_MS` or file name parsing logic in `delete-old-files.js` as needed for your use case. 
+- **Tech Stack:**
+  - [Supabase](https://supabase.com/) for storage
+  - [Node.js](https://nodejs.org/) for scripting
+  - [GitHub Actions](https://github.com/features/actions) for automation
+
+---
+
+## 🛡️ Security
+
+- All sensitive credentials (Supabase URL and Service Role Key) are securely managed using GitHub Actions secrets.
+- **No secrets are ever exposed in the code or logs.**
+
+---
+
+## 📂 Project Structure
+
+- `delete-old-files.js` — The cleanup script
+- `.github/workflows/delete-old-files.yml` — The GitHub Actions workflow
+- `package.json` — Project dependencies and scripts
+- `README.md` — This file
+
+---
+
+## 🤝 Contributing
+
+If you want to help improve or maintain this project, please reach out to the repo owner or open a pull request!
+
+---
+
+## 🔗 Website
+
+[https://www.original-website-link.com](https://www.original-website-link.com)
+
+---
+
+*Keeping your Supabase storage tidy, automatically!* 
